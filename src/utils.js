@@ -4,15 +4,15 @@ window.axios = axios;
 
 export function getAllRepos(login) {
   return axios.get(`https://api.github.com/users/${login}/repos`).then((resp) => {
-    return {
-      login: resp.data.login
-    }
+    return resp.data;
   });
 }
 
 export function getUserInfo() {
   return axios.get('https://api.github.com/user').then((resp) => { 
-    return resp.data;
+    return {
+      login: resp.data.login
+    };
   });
 }
 

@@ -1,0 +1,27 @@
+.task-item {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px -5px #eee;
+  margin-bottom: 16px;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.task-item-header-container {
+  color: #53616e;
+  margin-bottom: 16px;
+}
+
+.task-item-header-container-header {
+  display: inline-block;
+  margin-left: 16px;
+  font-size: 16px;
+}
+
+.task-item-header-container-delete {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

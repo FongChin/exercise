@@ -5,8 +5,15 @@ const SortableIssue = SortableElement(({ issue }) => {
 	const { title, body, user } = issue;
 	return (
 		<li className="list-item list-item--issue">
-			<div>{title} <span>by {user.login}</span></div>
-			{body}
+			<div className="row">
+				<div className="col-2">
+					<a href={user.url}><img className="gh-avatar" src={user.avatar_url} alt={user.login} /></a>
+				</div>
+				<div className="col">
+					<h3>{title} <span className="list-item--text">by {user.login}</span><span className="list-item--text float-right">#{issue.number}</span></h3>
+					{body}
+				</div>
+			</div>
 		</li>
 	)
 });
@@ -38,12 +45,12 @@ class SortableIssueList extends Component {
 	  }
 	
 	  render() {
-		return (
-		  <SortableList ref="wrapper" issues={this.props.issues} 
-			onSortStart={this.onSortStart.bind(this)}
-			onSortEnd={this.onSortEnd.bind(this)} 
-			isActive={this.state.isActive} />
-		);
+			return (
+				<SortableList ref="wrapper" issues={this.props.issues} 
+					onSortStart={this.onSortStart.bind(this)}
+					onSortEnd={this.onSortEnd.bind(this)} 
+					isActive={this.state.isActive} />
+			);
 	  }
 	};
 	
