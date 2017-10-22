@@ -8,9 +8,8 @@ import { arrayMove } from 'react-sortable-hoc';
 class App extends Component {
   constructor(props) {
     super(props);
-    // const token = window.prompt('Please enter your github token');
-    const token = '0409847e48d2f0831096eeabb3da707164bbd53e';
-    
+    const token = window.prompt('Please enter your github token');
+
     initializeAxio(token);
     getUserInfo().then((user) => {
       getAllRepos(user.login).then((repos) => {
